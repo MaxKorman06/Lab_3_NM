@@ -36,7 +36,17 @@ namespace Lab_3_NM
             textBox_a.Clear();
             textBox_b.Clear();
 
+            label_a11r.Text = "a11";
+            label_a12r.Text = "a12";
+            label_a13r.Text = "a13";
+            label_a21r.Text = "a21";
+            label_a22r.Text = "a22";
+            label_a23r.Text = "a23";
 
+            label_a11rt.Text = "a11";
+            label_a12rt.Text = "a12";
+            label_a21rt.Text = "a21";
+            label_a22rt.Text = "a22";
         }
         private void button_calculate_Click(object sender, EventArgs e)
         {
@@ -60,7 +70,86 @@ namespace Lab_3_NM
             x[3] = combined_method(a, b, error);
             label_comb.Text = "X= " + Convert.ToString(x[3]);
 
+            double[] vector = new double[2];
+            double[] vector_x = new double[2];
+            double[,] matrix_der = new double[2, 2];
+            double[,] matrix = new double[2, 3];
+            double[] vector_c = new double[2];
+            double[] vector_der = new double[2];
+            double[] vector_xs = new double[2];
+            double n = 0;
+            vector[0] = 0.5;
+            vector[1] = 2;
 
+            matrix[0, 0] = Math.Pow(vector[1], 1/3);
+            matrix[0, 1] = vector[0];
+            matrix[0, 2] = -4;
+            matrix[1, 0] = 2 / vector[0];
+            matrix[1, 1] = -vector[1];
+            matrix[1, 2] = 1;
+
+            matrix_der[0, 0] = Math.Pow(vector[1], 3);
+            matrix_der[0, 1] = 1;
+            matrix_der[1, 0] = -2 / Math.Pow(vector[0], 3);
+            matrix_der[1, 1] = -1;
+
+            for (int i = 0; i < 2; i++)
+            {
+                vector_x[i] = vector[i];
+            }
+            for (int j = 0; j < 5; j++)
+            {
+                n = j;
+                for (int i = 0; i < 2; i++)
+                {
+                    vector_xs[i] = vector_x[i];
+                }
+                matrix[0, 0] = Math.Pow(vector_x[1], 1 / 3);
+                matrix[0, 1] = vector_x[0];
+                matrix[0, 2] = -4;
+                matrix[1, 0] = 2 / vector_x[0];
+                matrix[1, 1] = -vector_x[1];
+                matrix[1, 2] = 1;
+
+                matrix_der[0, 0] = Math.Pow(vector_x[1], 3);
+                matrix_der[0, 1] = 1;
+                matrix_der[1, 0] = -2 / Math.Pow(vector_x[0], 3);
+                matrix_der[1, 1] = -1;
+
+                for (int i = 0; i < 2; i++)
+                {
+                    vector_der[i] = matrix[i, 0] + matrix[i, 1] + matrix[i, 2];
+                }
+
+                for (int i = 0; i < 2; i++)
+                {
+                    vector_c[i] = matrix_der[i, 0] * vector_der[0] + matrix_der[i, 1] * vector_der[1];
+                }
+                for (int i = 0; i < 2; i++)
+                {
+                    vector_x[i] = vector_x[i] - vector_c[i];
+                }
+                if (vector_x[0] == (vector_xs[0]+error) && vector_x[0] == (vector_xs[0] - error) && vector_x[1] == (vector_xs[1] + error) && vector_x[1] == (vector_xs[1] - error))
+                {
+                    break;
+                }
+            }
+
+            label_a11r.Text = Convert.ToString(matrix[0, 0]);
+            label_a12r.Text = Convert.ToString(matrix[0, 1]);
+            label_a13r.Text = Convert.ToString(matrix[0, 2]);
+            label_a21r.Text = Convert.ToString(matrix[1, 0]);
+            label_a22r.Text = Convert.ToString(matrix[1, 1]);
+            label_a23r.Text = Convert.ToString(matrix[1, 2]);
+
+            label_a11rt.Text = Convert.ToString(matrix_der[0, 0]);
+            label_a12rt.Text = Convert.ToString(matrix_der[0, 1]);
+            label_a21rt.Text = Convert.ToString(matrix_der[1, 0]);
+            label_a22rt.Text = Convert.ToString(matrix_der[1, 1]);
+
+            label_x1r.Text = Convert.ToString(vector_x[0]);
+            label_x2r.Text = Convert.ToString(vector_x[1]);
+            label_n.Text = Convert.ToString(n);
         }
 
         public double chord_method_func(double a_h, double b_h)
