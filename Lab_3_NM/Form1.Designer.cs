@@ -49,10 +49,7 @@ namespace Lab_3_NM
             this.label_chord = new System.Windows.Forms.Label();
             this.label_combi = new System.Windows.Forms.Label();
             this.label_comb = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label_tangent = new System.Windows.Forms.Label();
             this.label_tangenti = new System.Windows.Forms.Label();
@@ -86,6 +83,10 @@ namespace Lab_3_NM
             this.label_x1r = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label_n = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -284,43 +285,15 @@ namespace Lab_3_NM
             this.label_comb.TabIndex = 71;
             this.label_comb.Text = "X=";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(23, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 20);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "(x - 1)^2 - 1.5 * e^x = 0";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(23, 38);
+            this.label6.Location = new System.Drawing.Point(21, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 74;
             this.label6.Text = "Варіант 22";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Lab_3_NM.Properties.Resources.Знімок_екрана_2022_04_04_212445;
-            this.pictureBox2.Location = new System.Drawing.Point(25, 244);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(88, 60);
-            this.pictureBox2.TabIndex = 78;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Lab_3_NM.Properties.Resources.Знімок_екрана_2022_04_04_212345;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 139);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 99);
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
             // 
             // label11
             // 
@@ -652,11 +625,39 @@ namespace Lab_3_NM
             this.label_n.TabIndex = 154;
             this.label_n.Text = "n";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Lab_3_NM.Properties.Resources.Знімок_екрана_2022_05_07_205230;
+            this.pictureBox3.Location = new System.Drawing.Point(25, 32);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(196, 42);
+            this.pictureBox3.TabIndex = 156;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Lab_3_NM.Properties.Resources.Знімок_екрана_2022_04_04_212445;
+            this.pictureBox2.Location = new System.Drawing.Point(25, 244);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(88, 60);
+            this.pictureBox2.TabIndex = 78;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Lab_3_NM.Properties.Resources.Знімок_екрана_2022_04_04_212345;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 139);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(169, 99);
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 487);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label_n);
             this.Controls.Add(this.label25);
@@ -690,7 +691,6 @@ namespace Lab_3_NM
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_combi);
             this.Controls.Add(this.label_comb);
             this.Controls.Add(this.label_chordi);
@@ -717,6 +717,7 @@ namespace Lab_3_NM
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -746,7 +747,6 @@ namespace Lab_3_NM
         private System.Windows.Forms.Label label_chord;
         private System.Windows.Forms.Label label_combi;
         private System.Windows.Forms.Label label_comb;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -783,6 +783,7 @@ namespace Lab_3_NM
         private System.Windows.Forms.Label label_x1r;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label_n;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

@@ -178,10 +178,17 @@ namespace Lab_3_NM
             return x;
         }
 
+        public double first_derivative(double a_h)
+        {
+            double x;
+            x = 2 * a_h - 2 - (3 * Math.Exp(a_h) / 2);
+            return x;
+        }
+
         public double tangent_method_func(double b_h)
         {
             double x;
-            x = (2 * Math.Pow(b_h, 2) - 3 * b_h * Math.Exp(b_h) - 2 + 3 * Math.Exp(b_h)) / (4 * b_h - 4 - 3 * Math.Exp(b_h));
+            x = b_h - first_function(b_h) / first_derivative(b_h); //(2 * Math.Pow(b_h, 2) - 3 * b_h * Math.Exp(b_h) - 2 + 3 * Math.Exp(b_h)) / (4 * b_h - 4 - 3 * Math.Exp(b_h));
             return x;
         }
 
